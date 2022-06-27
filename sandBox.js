@@ -27,3 +27,16 @@ function fibonacciIterative(n){
      
    }
    
+   function factorial(n){
+    if(n === 1 || n === 0){
+        return 1
+    }else{
+       return  n * factorial(n - 1)
+    }
+   }
+
+   // explainations:
+   // 4*factoial(3) = 4*6
+   //  3*factorial(2) = 3*2
+   //   2* factoial(1) = 2*1
+   //        1(after return 1, bubble up step by steps to n)
