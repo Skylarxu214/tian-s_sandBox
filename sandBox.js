@@ -92,3 +92,24 @@ function climbStairs(n){
         return climbStairs(n -1) + climbStairs(n-2)
     }
 }
+
+
+function bubbleSort(arr){
+  // let each num compare to the num after them 
+  // loop it from the beginning arr.length - 1 times, to go over 
+  // every eles
+  // time complexity is O(n^2)
+
+  for(let i = 0; i < arr.length; i++){
+    let route = i
+    for(let j = 0; j < arr.length - 1; j++){
+      if(arr[j] > arr[j+1]){
+        let cur = arr[j]
+        arr[j] = arr[j+1]
+        arr[j+1] = cur
+      }
+      console.log(route,arr)
+    }
+  }
+  return arr
+}
