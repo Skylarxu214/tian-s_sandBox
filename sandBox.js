@@ -113,3 +113,30 @@ function bubbleSort(arr){
   }
   return arr
 }
+
+function selectionSort(nums){
+  // the most straight forward loop
+  // let each num compared to the rest, and find the min index, switch the min index to the current index
+  // change the value of current and previous
+
+  for(let i = 0; i < nums.length -1; i ++){
+    let min = i
+    let cur = nums[i]
+    for(let j = i+1; j< nums.length; j++){
+      if(nums[j]< nums[min]){
+        min = j
+      }
+    }
+      nums[i] = nums[min]
+      nums[min] = cur
+  }
+  return nums
+}
+
+let month = [1,2,4,5]
+console.log(month.splice(0,1))// 1 is taking out
+console.log(month)// 1 will be gone
+console.log(month.splice(0,0,1)) // before the current index 0 add on 1
+console.log(month)
+console.log(month.splice(2,0,3))// before the current index 2
+console.log(month)
