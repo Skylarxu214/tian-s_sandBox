@@ -160,6 +160,9 @@ function insertionSort(array) {
 
 
 function mergeSort(arr){
+// break the arr to side by side, using mid variable and slice them 
+// use a helper method to compare each element from each side and push in to an empty array
+// finally return a new array which will contain  the result of the result array and rest of the side  
   if(arr.length <= 1){
     return arr
   }
