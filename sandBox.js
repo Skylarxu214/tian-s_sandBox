@@ -157,3 +157,37 @@ function insertionSort(array) {
   }
   return array
 }
+
+
+function mergeSort(arr){
+  if(arr.length <= 1){
+    return arr
+  }
+  let mid = Math.floor(arr.length / 2)
+  let left = arr.slice(0,mid)
+  let right = arr.slice(mid)
+  console.log('left', left)
+  console.log('right', right)
+  return merge(
+    mergeSort(left),
+    mergeSort(right)
+  )
+}
+
+function merge(left,right){
+  let result = []
+  let indexL = 0
+  let indexR = 0
+  while(indexL < left.length && indexR < right.length){
+    if(left[indexL]< right[indexR]){
+      result.push(left[indexL])
+      indexL ++
+    }else{
+      result.push(right[indexR])
+      indexR ++
+    }
+  }
+  return [...result, ...left.slice(indexL), ...right.slice(indexR)]
+}
+
+let answer = mergeSort([7,3,8,2,1,9,6])
