@@ -194,3 +194,33 @@ function merge(left,right){
 }
 
 let answer = mergeSort([7,3,8,2,1,9,6])
+
+function quickSort(arr){
+  if(arr <= 1){
+    return arr
+  }
+  let rounds = 0
+  let piv = arr[arr.length - 1]
+  let leftArr = []
+  let rightArr = []
+  for(let el of arr.slice(0, arr.length - 1)){
+    el < piv? leftArr.push(el): rightArr.push(el)
+    rounds ++ 
+  }
+  console.log('left round:',rounds, leftArr)
+  console.log('right round:',rounds, rightArr)
+  return [...quickSort(leftArr), piv, ...quickSort(rightArr)]
+}
+
+function bubbleSort2(arr){
+  for(let i = 0; i < arr.length; i++){
+    for(let j = 1; j < arr.length; j++){
+      let cur = arr [j]
+      if(arr[j] < arr[j-1]){
+        arr[j] = arr[j-1]
+        arr[j-1] = cur
+      }
+    }
+  }
+  return arr
+}
